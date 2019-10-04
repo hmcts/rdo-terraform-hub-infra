@@ -1,0 +1,13 @@
+## Note: 
+
+data "terraform_remote_state" "remote_state" {
+  backend = "azurerm"
+
+  config = {
+    storage_account_name = "${var.backend_storage_account_name}"
+    container_name       = "${var.backend_storage_container_name}"
+    access_key           = "${var.backend_access_key}"
+    key                  = "terraform-hub_core.tfstate"
+    resource_group_name  = "${var.infra_resource_group}"
+  }
+}
