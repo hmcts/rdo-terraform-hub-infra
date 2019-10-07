@@ -1,7 +1,5 @@
 variable "subscription_id" { }
 
-variable "infra_resource_group" { }
-
 variable "backend_storage_account_name" { }
 variable "backend_storage_container_name" { }
 variable "backend_access_key" { }
