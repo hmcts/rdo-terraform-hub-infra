@@ -55,3 +55,16 @@ data "azurerm_network_interface" "proxy-ip" {
 locals {
   proxy-ip                                   = "${data.azurerm_network_interface.proxy-ip.private_ip_address}"
 }
+
+
+data "azurerm_virtual_network" "vnet-dmz" {
+  name                                      = "hmcts-dmz-${var.environment}"
+  resource_group_name                       = "hmcts-dmz-${var.environment}"
+}
+
+data "azurerm_subnet" "dmz-proxy" {
+  name                                      = "dmz-proxy"
+  resource_group_name                       = "${data.azurerm_resource_group.rg-dmz.name}"
+  virtual_network_name                      = "${data.azurerm_virtual_network.vnet-dmz.name}"
+}
+
