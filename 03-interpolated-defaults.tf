@@ -16,6 +16,10 @@ data "azurerm_resource_group" "rg-dmz" {
   name                                      = "hmcts-dmz-${var.environment}"
 }
 
+data "azurerm_public_ip" "pip-ansible" {	
+  name                                      = "proxy-${var.environment}-pip"	
+  resource_group_name                       = "${data.azurerm_resource_group.rg-dmz.name}"	
+}
 
 data "azurerm_subnet" "sub-hub-mgmt" {
   name                                      = "hub-mgmt"
