@@ -13,11 +13,11 @@ resource "azurerm_network_interface" "ansible_server_nic" {
 
 module "firewall" {
   source                              = "github.com/hmcts/rdo-terraform-azure-palo-alto.git"
-  rg_name                             = "${azurerm_resource_group.rg_hub.name}"
-  vnet_name                           = "${azurerm_virtual_network.vnet_hub.name}"
-  subnet_management_id                = "${azurerm_subnet.subnet-mgmt.id}"
-  subnet_transit_private_id           = "${azurerm_subnet.subnet-private.id}"
-  subnet_transit_public_id            = "${azurerm_subnet.subnet-public.id}"
+  rg_name                             = "${data.azurerm_resource_group.rg-hub.name}"
+  vnet_name                           = "${data.azurerm_virtual_network.vnet-hub.name}"
+  subnet_management_id                = "${data.azurerm_subnet.sub-hub-mgmt.id}"
+  subnet_transit_private_id           = "${data.azurerm_subnet.sub-hub-transit-private.id}"
+  subnet_transit_public_id            = "${data.azurerm_subnet.sub-hub-transit-public.id}"
   replicas                            = "${var.firewall_replicas}"
   vm_name_prefix                      = "${var.firewall_name_prefix}"
   vm_username                         = "${var.firewall_username}"
