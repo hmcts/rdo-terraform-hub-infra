@@ -30,6 +30,11 @@ data "azurerm_subnet" "sub-hub-transit-private" {
   virtual_network_name                      = "${data.azurerm_virtual_network.vnet-hub.name}"
 }
 
+data "azurerm_subnet" "sub-hub-az-firewall" {
+  name                                      = "AzureFirewallSubnet"
+  resource_group_name                       = "${data.azurerm_resource_group.rg-hub.name}"
+  virtual_network_name                      = "${data.azurerm_virtual_network.vnet-hub.name}"
+}
 
 data "azurerm_virtual_network" "vnet-dmz" {
   name                                      = "hmcts-dmz-${var.environment}"

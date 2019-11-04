@@ -37,3 +37,7 @@ variable "firewall_replicas" {
 }
 
 variable "vnet_name" { }
+
+variable "common_tags" {}
+variable "aks_config" {}
+variable "az_native_firewall" {}
