@@ -1,11 +1,11 @@
 
 resource "azurerm_network_interface" "ansible_server_nic" {
-  name                                = "${azurerm_virtual_network.vnet_hub.name}-ansible-nic"
-  location                            = "${azurerm_resource_group.rg_hub.location}"
-  resource_group_name                 = "${azurerm_resource_group.rg_hub.name}"
+  name                                = "${data.azurerm_virtual_network.vnet-hub.vnet-hub.name}-ansible-nic"
+  location                            = "${data.azurerm_resource_group.rg-hub.location}"
+  resource_group_name                 = "${data.azurerm_resource_group.rg-hub.name}"
 
     ip_configuration {
-        name                          = "${azurerm_virtual_network.vnet_hub.name}-ansible-ip"
+        name                          = "${data.azurerm_virtual_network.vnet-hub.vnet-hub.name}-ansible-ip"
         subnet_id                     = "${azurerm_subnet.subnet-mgmt.id}"
         private_ip_address_allocation = "dynamic"
     }
