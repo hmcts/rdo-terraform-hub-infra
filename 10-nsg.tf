@@ -1,4 +1,4 @@
-
+/*
 resource "azurerm_network_security_rule" "Ansible_Public_IPs" {
   name                                = "Ansible_Agent_Public_IP"
   description		                      = "Ansible Agent Public IP Address"
@@ -13,3 +13,4 @@ resource "azurerm_network_security_rule" "Ansible_Public_IPs" {
   resource_group_name                 = "${data.azurerm_resource_group.rg-hub.name}"
   network_security_group_name         = "${data.azurerm_network_security_group.nsg-mgmt.name}"
 }
+*/
