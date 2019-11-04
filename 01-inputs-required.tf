@@ -40,4 +40,4 @@ variable "vnet_name" { }
 
 variable "common_tags" {}
 variable "aks_config" {}
-variable "az_native_firewall" {}
+variable "azfw_dnat_rule_palo_lb" {}
