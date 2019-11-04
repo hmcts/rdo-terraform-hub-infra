@@ -8,8 +8,17 @@ resource "azurerm_network_interface" "ansible_server_nic" {
         name                          = "${data.azurerm_virtual_network.vnet-hub.name}-ansible-ip"
         subnet_id                     = "${data.azurerm_subnet.sub-hub-mgmt.id}"
         private_ip_address_allocation = "dynamic"
+        public_ip_address_id          = "${azurerm_public_ip.pip-ansible.id}"
     }
 }
+
+resource "azurerm_public_ip" "pip-ansible" {
+  name                                = "${data.azurerm_virtual_network.vnet-hub.name}-ansible-pip"
+  location                            = "${data.azurerm_resource_group.rg-hub.location}"
+  resource_group_name                 = "${data.azurerm_resource_group.rg-hub.name}"
+  allocation_method                   = "Static"
+}
+
 
 module "firewall" {
   source                              = "github.com/hmcts/rdo-terraform-azure-palo-alto.git"
