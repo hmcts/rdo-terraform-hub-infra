@@ -32,7 +32,7 @@ module "firewall" {
   vm_username                         = "${var.firewall_username}"
   vm_password                         = "${var.firewall_password}"
   environment                         = "${var.environment}"
-  pip-ansible                         = "${azurerm_network_interface.ansible_server_nic.private_ip_address}"
+  pip-ansible                         = "${azurerm_public_ip.pip-ansible.ip_address}"
   ansible-nic                         = "${azurerm_network_interface.ansible_server_nic.id}"
 
 }
