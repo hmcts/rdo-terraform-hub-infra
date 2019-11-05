@@ -1,6 +1,6 @@
 # Azure Native Firewall
-module "firewall" {
-  source                 = "github.com:hmcts/azure-native-firewall.git"
+module "az-native-firewall" {
+  source                 = "git::https://github.com/hmcts/azure-native-firewall.git"
   rg_name                = data.azurerm_resource_group.rg-hub.name
   vnet_name              = data.azurerm_virtual_network.vnet-hub.name
   common_tags            = var.common_tags
