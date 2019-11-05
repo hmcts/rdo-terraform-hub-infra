@@ -10,5 +10,5 @@ provider "azurerm" {
 
 provider "azurerm" {
   alias           = "aks"
-  subscription_id = var.subscription_id
+  subscription_id = var.aks_subscription_id
 }

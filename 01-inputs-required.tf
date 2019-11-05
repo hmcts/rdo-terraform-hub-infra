@@ -41,3 +41,4 @@ variable "vnet_name" { }
 variable "common_tags" {}
 variable "aks_config" {}
 variable "azfw_dnat_rule_palo_lb" {}
+variable "aks_subscription_id" {}
