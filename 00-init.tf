@@ -7,8 +7,3 @@ provider "azurerm" {
   version                             = ">=1.24.0"
   subscription_id                     = "${var.subscription_id}"
 }
-
-provider "azurerm" {
-  alias           = "aks"
-  subscription_id = var.subscription_id
-}
