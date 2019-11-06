@@ -1,15 +1,6 @@
 # Azure Native Firewall
 module "az-native-firewall" {
   source                 = "github.com/hmcts/azure-native-firewall.git"
-  
-  providers {
-    azurerm.ithc     = "azurerm.ithc" 
-    azurerm.perftest = "azurerm.perftest"
-    azurerm.aat      = "azurerm.aat"
-    azurerm.prod     = "azurerm.prod"
-    azurerm.sbox     = "azurerm.sbox"
-  }
-
   rg_name                = data.azurerm_resource_group.rg-hub.name
   vnet_name              = data.azurerm_virtual_network.vnet-hub.name
   common_tags            = var.common_tags
