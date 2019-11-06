@@ -6,7 +6,7 @@ module "az-native-firewall" {
   common_tags            = var.common_tags
   environment            = var.environment
   aks_config             = var.aks_config
-  azfw_dnat_rule_palo_lb = var.azfw_dnat_rule_palo_lb
+  azfw_dnat_rule_palo    = var.azfw_dnat_rule_palo
   location               = data.azurerm_resource_group.rg-hub.location
   subnet_id              = data.azurerm_subnet.sub-hub-az-firewall.id
 }
