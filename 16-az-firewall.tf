@@ -10,7 +10,5 @@ module "az-native-firewall" {
   location               = data.azurerm_resource_group.rg-hub.location
   subnet_id              = data.azurerm_subnet.sub-hub-az-firewall.id
   subscription_id        = var.subscription_id
-  arm_client_id          = var.arm_client_id
-  arm_client_secret      = var.arm_client_secret
-  arm_tenant_id          = var.arm_tenant_id
+  peering_setup          = var.peering_setup
 }
