@@ -9,6 +9,5 @@ module "az-native-firewall" {
   azfw_dnat_rule_palo    = var.azfw_dnat_rule_palo
   location               = data.azurerm_resource_group.rg-hub.location
   subnet_id              = data.azurerm_subnet.sub-hub-az-firewall.id
-  subscription_id        = var.subscription_id
   peering_setup          = var.peering_setup
 }
