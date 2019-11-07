@@ -38,7 +38,7 @@ variable "firewall_replicas" {
 
 variable "vnet_name" { }
 
-variable "common_tags" {}
-variable "aks_config" {}
-variable "azfw_dnat_rule_palo" {}
-variable "peering_setup" {}
+#variable "common_tags" {}
+#variable "aks_config" {}
+#variable "azfw_dnat_rule_palo" {}
+#variable "peering_setup" {}
