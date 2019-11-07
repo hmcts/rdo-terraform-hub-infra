@@ -1,5 +1,5 @@
 # Azure Native Firewall
-/*
+
 module "az-native-firewall" {
   source                 = "github.com/hmcts/azure-native-firewall.git"
   rg_name                = data.azurerm_resource_group.rg-hub.name
@@ -12,4 +12,3 @@ module "az-native-firewall" {
   subnet_id              = data.azurerm_subnet.sub-hub-az-firewall.id
   peering_setup          = var.peering_setup
 }
-*/
