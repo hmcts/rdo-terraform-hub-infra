@@ -1,35 +1,17 @@
-This code will be used to build an Azure environment
+# Overview
 
-Example terraform.tfvars file:
-```
-subscription_id = "aaa-aaa-aaa-aaa"
-rg_name = "rg-infrastructure"
-vnet_name = "vnet-infrastructure"
-vnet_cidr = "10.0.0.0/16"
-vnet_subnets = [
-  "sub-db:10.0.0.0/24:nsg_db",
-  "sub-app:10.0.1.0/24:nsg_app",
-  "sub-web:10.0.2.0/24:nsg_web"
-  "sub-fw-mgmt:10.0.3.0/24:nsg_fw"
-  "sub-firewall-transit:10.0.4.0/24:nsg_transit"
-]
-nsg_list = [
-  "nsg_db",
-  "nsg_app"
-]
-nsg_rules = [
-  "nsg_db:permit_trusted:200:Inbound:Allow:tcp:*:3389:*:*",
-  "nsg_db:deny_all:300:Inbound:Deny:*:*:*:*:*",
-  "nsg_app:permit_trusted:200:Inbound:Allow:tcp:*:9000:*:*",
-  "nsg_app:deny_all:300:Inbound:Deny:*:*:*:*:*",
-  "nsg_web:permit_trusted:200:Inbound:Allow:tcp:*:80:*:*",
-  "nsg_fw:permit_trusted:200:Inbound:Allow:tcp:*:443:*:*",
-  "nsg_transit:permit_trusted:200:Inbound:Allow:tcp:*:443:*:*",
-]
-firewall_name_prefix = "firewall"
-firewall_username = "firewalladmin"
-firewall_password = "secret-password"
-firewall_replicas = 2
-firewall_subnet_management = "sub-fw-mgmt"
-firewall_subnet_transit = "sub-fw-transit"
-```
+This is the third module in the HUB-DMZ Pipeline this is where all HUB Infrastructure will be provisioned from as HUB-CORE and DMZ-CORE has already been provisioned this
+allows this module to lookup any existing network information required which simplifies the build process.
+
+Currently what is built in this stage is the following Services
+  - Network Security Groups
+  - Palo's
+  - Azure Firewall
+
+### Documentation
+
+  - [Confluence: HUB-DMZ](https://tools.hmcts.net/confluence/display/RD/HUB-DMZ+Overview)
+
+### Pipeline
+
+- [Azure DevOps: HUB-DMZ](https://dev.azure.com/hmcts/DevOps/_build?definitionId=226&_a=summary)
