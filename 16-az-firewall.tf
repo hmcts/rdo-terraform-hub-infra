@@ -1,4 +1,5 @@
 # Azure Native Firewall
+/*
 module "az-native-firewall" {
   source                 = "github.com/hmcts/azure-native-firewall.git"
   rg_name                = data.azurerm_resource_group.rg-hub.name
@@ -14,3 +15,4 @@ module "az-native-firewall" {
   arm_client_secret      = var.arm_client_secret
   arm_tenant_id          = var.arm_tenant_id
 }
+*/
